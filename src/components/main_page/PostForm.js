@@ -12,6 +12,8 @@ const PostForm = props => {
   const { createPost } = props;
 
   const handleSubmit = () => {
+    setError('');
+
     if(!name || !description) {
       setError('Please add name and description');
       return;
@@ -23,7 +25,6 @@ const PostForm = props => {
       setDescription('');
       setName('');
     });
-    
   }
 
   return (
