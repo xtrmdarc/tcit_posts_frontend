@@ -1,7 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { removePost } from '../../actions';
+import api from '../../services/api';
 
 const PostList = props => {
-  const { posts } = props;
+  const { posts, removePost } = props;
+
+  const handleRemove = (id) => {
+    api.removePost(id).then( post => {
+      removePost(post);
+    });
+  }
 
   return (
     <div className="postList">
@@ -19,7 +28,7 @@ const PostList = props => {
             {post.description}
           </div>
           <div className='postAction'>
-            <button type="button">Remove</button>
+            <button onClick={() => handleRemove(post.id)} type="button">Remove</button>
           </div>
         </div>
       ))
@@ -28,4 +37,8 @@ const PostList = props => {
   );
 }
 
-export default PostList;
+const mapDispatchToProps = dispatch => ({
+  removePost: (post) => dispatch(removePost(post)),
+});
+
+export default connect(null, mapDispatchToProps)(PostList);

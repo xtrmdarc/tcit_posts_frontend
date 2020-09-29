@@ -16,7 +16,7 @@ input[type="text"] {
   justify-content: center;
 
   .contentWrapper {
-    width: 500px;
+    width: 600px;
   }
 
   .postFilter {
@@ -32,6 +32,8 @@ input[type="text"] {
 
   .postList {
     margin-top: $broadSpace;
+    border: 1px solid rgb(206, 206, 206);
+    box-shadow: 1px 2px 1px rgba(158, 158, 158, 0.178);
 
     .postName {
       width: 30%;
@@ -55,10 +57,9 @@ input[type="text"] {
 
     .postItem {
       display: flex;
-      
+      align-items: center;
       & > div {
-        padding: 4px 3px;
-        padding-top: $closeSpace;
+        padding: $closeSpace 3px;
       }
 
       .postAction {
@@ -81,6 +82,13 @@ input[type="text"] {
     button {
       @include brandButton();
     }
+  }
+
+  .errorMessage {
+    color: red;
+    display: flex;
+    margin-top: calc(#{$closeSpace} / 2);
+    font-size: 12px;
   }
 }
 

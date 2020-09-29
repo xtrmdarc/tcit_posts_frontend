@@ -18,7 +18,15 @@ const api = (() => {
     return data;
   };
 
-  return {getPosts, addPost};
+  const removePost = async (postId) => {
+    const response = await fetch(`/posts/${postId}`, {
+      method: 'DELETE',
+    });
+    const data = await response.json();
+    return data;
+  };
+
+  return {getPosts, addPost, removePost};
 })();
 
 export default api;
