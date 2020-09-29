@@ -1,4 +1,18 @@
 
 $closeSpace: 16px;
 $broadSpace: 32px;
-$brandColor: #fff;
+$brandColor: #1fbdb7;
+
+@mixin textInput() {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 4px 2px;
+}
+
+@mixin brandButton() {
+  padding: 6px 10px;
+  background-color: $brandColor;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}

@@ -9,7 +9,7 @@ const PostFilter = props => {
 
   return (
     <div className="postFilter">
-      <input type="text" value={nameFilter} onChange={e => setNameFilter(e.target.value)}/>
+      <input type="text" placeholder="Filter by name" value={nameFilter} onChange={e => setNameFilter(e.target.value)}/>
       <button type="button" onClick={() => changeFilter(nameFilter)}>Buscar</button>
     </div>
   );
