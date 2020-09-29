@@ -1,0 +1,26 @@
+
+@import './variables';
+
+* {
+  box-sizing: border-box;
+}
+
+.mainPage {
+  display: flex;
+  justify-content: center;
+
+  .contentWrapper {
+    width: 500px;
+  }
+
+  .postFilter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    input[type="text"] {
+            
+    }
+  }
+}
+
